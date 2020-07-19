@@ -27,4 +27,3 @@ There are many reasons why we should not just use a single study or a single pie
 
 Single studies may be plagued by different biases that we as researchers may not be aware of. These biases are not necessarily the result of nefarious actions by the researchers (e.g. data fabrication) but there has been some recent well-publicised examples of this. A lot of "questionable research practices" come from actions that are mostly "bad practice" or result from bad training. One common action (which is how I was trained as a student) is known as "HARKing" - Hypothesizing after the results are known. This is where we start a study with one hypothesis in mind but after we see patterns in the data we omit that hypothesis and choose one that fits the data better (and tells a neater or more exciting story). Evidence synthesis assesses the quality of studies to try and reduce some of these biases.
 
-## 
