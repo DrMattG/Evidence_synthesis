@@ -13,9 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 There are a variety of different ways that the term "Evidence synthesis" has been defined. Here we try and come up with a single sentence definition and then expand on this to talk about why evidence synthesis is important. On this website we will highlight different tools and approaches that can be used to carry out evidence synthesis and also highlight ways to identify where bias may influence the evidence synthesis presented to a decision maker. We hope to develop this website as a source of information and discussion on all aspects of evidence synthesis but wish to retain a focus on our main interests which are wildlife conservation and management. Evidence synthesis researchers are generally very interdisciplinary because the problems that we seek to address are found across different areas of society and science. Often advances in evidence synthesis tools come from the medical field but are then adapted and adopted for use in other fields. There is now a strong history of evidence synthesis in other disciplines such as education, welfare, conservation, policing, international development, and so on. 
 
-> A single sentence definition of "Evidence Synthesis"
-
-"Bringing together evidence from a variety of sources in a robust and transparent way to help inform decisions about specific issues or interventions" 
+### A single sentence definition of "Evidence Synthesis"
+> "Bringing together evidence from a variety of sources in a robust and transparent way to help inform decisions about specific issues or interventions" 
 
 ## What is evidence?
 

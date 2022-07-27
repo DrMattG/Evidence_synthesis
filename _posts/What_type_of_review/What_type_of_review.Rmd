@@ -1,0 +1,56 @@
+---
+title: "Which type of review should I do?"
+author: "Matt"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE,layout="l-screen-inset"}
+library(DiagrammeR)
+grViz(diagram = "digraph flowchart {
+      # define node aesthetics
+      node [fontname = Arial, shape = rect, color = DeepSkyBlue, style = filled, fontcolor = White]        
+      tab1 [label = 'Do you have >3 on the review team?']
+      tab2 [label = 'Do you have 9 to 18 months to conduct the review?']
+      tab3 [label = 'Reviews need a multi-person team for unbiased article screening but see Rapid Reviews']
+      tab4 [label = 'Do you have a broad topic or multiple questions?']
+      tab5 [label = 'Are you an expert or know the literature on this topic well?']
+      tab6 [label = 'Scoping Review/Systematic Map', color=DarkGreen]
+      tab7 [label = 'Are there multiple published Systematic Reviews on your topic?']
+      tab8 [label = 'Umbrella Review or Review of Reviews',color=DarkGreen]
+      tab9 [label = 'Do you have a well formatted research question,e.g. PICO and inclusion/exclusion criteria?']
+      tab10 [label = 'Do you think the included studies are homogenous enough to statistically evaluate, synthesise and summarise results objectively?']
+      tab11 [label = 'A well formulated question is vital - speak to your library search specialist']
+      tab12 [label = 'Systematic Review & meta-analysis',color=DarkGreen]
+      tab13 [label = 'Systematic Review',color=DarkGreen]
+      tab14 [label='Rapid Review',color=DarkGreen]
+      tab15 [label='Add subject experts to join the team and use a Rapid Review']
+# set up node layout
+      tab1 -> tab2[label=Yes];
+      tab1 -> tab3[label=No];
+      tab2 -> tab4[label=Yes];
+      tab2 -> tab5[label=No];
+      tab5 -> tab14[label=Yes];
+      tab5 -> tab15[label=No];
+      tab4 -> tab6[label=Yes];
+      tab4 -> tab7[label=No];
+      tab7 -> tab8[label=Yes];
+      tab7 -> tab9[label=No];
+      tab9 -> tab10[label=Yes];
+      tab9 -> tab11[label=No];
+      tab10 -> tab12[label=Yes];
+      tab10 -> tab13[label=No];
+      tab11 -> tab9[label='Rethink the question']
+      tab3 -> tab14
+      }
+
+      ")
+
+
+```

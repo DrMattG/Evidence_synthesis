@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-07-27T16:36:27+02:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Evidence synthesis",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-07-27T16:36:28+02:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
