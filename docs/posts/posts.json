@@ -17,6 +17,57 @@
     "input_file": {}
   },
   {
+    "path": "posts/What_is_rapid_review/",
+    "title": "What is Rapid Review?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\ntbc\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T15:07:26+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/What_is_review_of_review/",
+    "title": "What are Reviews of Reviews?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\ntbc\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T15:09:02+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/What_is_systematic_mapping/",
+    "title": "What is systematic mapping?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\ntbc\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T15:07:39+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/What_is_systematic_review/",
     "title": "What is 'Systematic Review'?",
     "description": {},
