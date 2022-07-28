@@ -1,5 +1,73 @@
 [
   {
+    "path": "posts/What_is_meta_analysis/",
+    "title": "What is 'Meta-analysis'?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\nMeta-analysis is the statistical combination of the results from studies that are included in a systematic review to reach a pooled conclusion about the effect of an intervention.The power to detect an effect in a meta-analysis is usually higher than the power in any of the studies that are included. This is a major benefit of using meta-analysis to determine the effect of interventions. We get a better (more robust) estimate because we can combine several smaller studies.\r\nIn ecology, the size of the effects of interest are generally small and between-study heterogeneity generally high. We normally use a random-effects meta-analysis in ecology because we do not assume that the studies will estimate the same true effect, rather that they estimate a distribution of effects.\r\nThere are many different R packages that can be used for Meta-analysis - the most well-known is metafor which contains functions for the statistical modelling needed. This book contains a lot of useful information and code to carry out a meta-analysis.\r\nRandom effects meta-analysis example\r\nWe can make use of a dataset that has already been compiled and used in this excellent book. The data consist information from 62 Articles on 39 species of invasive trees.The included studies “…had to identify at least one invasive species and the invasive species had to be present within a natural ecosystem rather than agriculture or aquaculture systems (Population). All articles had to include replicate plots or study sites where invasive species were present (Intervention). The intervention could not be an assemblage of invasive species, but rather had to focus on the impacts of a single invasive species on native species richness…The study had to have a control group where the invasive species was either not present or present at very low densities (Control). We extracted measurements of species richness or higher-order taxonomic richness (Outcome).”\r\nFirst we load the data\r\n\r\n\r\ndat <- read.csv(\"https://raw.githubusercontent.com/robcrystalornelas/meta-analysis_of_ecological_data/master/MaEDR_data.csv\")\r\n\r\n\r\n\r\nNext calculate the effect size\r\nAn effect size is the (quite literately) the size of the effect of an intervention or exposure. For example, the (standardised) difference between the control and intervention in terms of native species richness. It can be expressed in a number of different ways. The most common ways in ecology include the standardised mean difference (Hedge’s g) and the Response Ratio. Hedge’s g is useful because it standardises the effects from each study so that they are measured on the same unit-less scale and adjusts for the sample size and variability in the control and intervention groups.\r\nThe Response Ratio describes the ratio of the mean outcome from the control and the mean outcome from the intervention. It is often expressed as the Log Response Ratio. For the example data, a negative Log Response Ratio indicates that an invasive species is associated with a decrease in native species richness and a positive Log Response Ration indicates the opposite. Converting Log Response Ratios back to Response Ratios mean we can give a percentage change in richness with invasive species.\r\nHaving a value of zero in either the control or intervention group means that the Response Ratio can not be calculated. There are some adjustments (which are not universally agreed upon) that can be made to the data - e.g. replacing 0 with 0.1.\r\n\r\n\r\nlibrary(metafor)\r\n\r\n# Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/\r\n\r\nRR_effect_sizes <- escalc( # Function for calculating effect sizes.\r\n    \"ROM\",\r\n    # Specify the effect size we want to calculate. In this case ROM for the Ratio of Means or Response Ratio\r\n    m1i = mean_invaded,\r\n    # mean richness at invaded sites\r\n    n1i = sample_size_invaded,\r\n    # invaded site sample size\r\n    sd1i = SD_invaded,\r\n    # invaded site SD\r\n    m2i = mean_control,\r\n    # mean richness at control sites\r\n    n2i = sample_size_control,\r\n    # control site sample size\r\n    sd2i = SD_control,\r\n    # control site SD\r\n    data = dat # This is where the escalc function can find all the data for our meta-analysis\r\n  )\r\n\r\n\r\n\r\nThis appends two columns to the dataset. yi is the effect size from each row (Studies can have multiple effects reported - each effect gets its own row in the dataset). vi is the variance from each row\r\nRun the meta-analysis\r\n\r\n\r\n# Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/\r\n\r\nrandom_effect_model_results <- rma(yi, # this is the effect size from each row in database\r\n                                   vi, # measure of variance from each row in database\r\n                                   method = \"REML\", # random effect meta-analyses\r\n                                   slab = paste(lastname, publication_year, sep = \"\"), # This line of code prepares study labels for the forest plot\r\n                                   data = RR_effect_sizes) \r\n\r\n\r\n\r\nStudies with missing data are removed from the analysis.\r\n\r\n\r\nrandom_effect_model_results\r\n\r\n\r\n\r\nRandom-Effects Model (k = 84; tau^2 estimator: REML)\r\n\r\ntau^2 (estimated amount of total heterogeneity): 0.1720 (SE = 0.0327)\r\ntau (square root of estimated tau^2 value):      0.4147\r\nI^2 (total heterogeneity / total variability):   96.81%\r\nH^2 (total variability / sampling variability):  31.39\r\n\r\nTest for Heterogeneity:\r\nQ(df = 83) = 1034.0862, p-val < .0001\r\n\r\nModel Results:\r\n\r\nestimate      se     zval    pval    ci.lb    ci.ub     <U+200B> \r\n -0.2134  0.0509  -4.1948  <.0001  -0.3131  -0.1137  *** \r\n\r\n---\r\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\r\n\r\nThe pooled effect estimate is -0.21 indicating that there is a negative effect of invasive trees on native species richness. The effect estimate does not cross 0 (the line of no effect) according to the 95% Confidence Intervals (-0.31 - -0.11).\r\nData visualization\r\nTypically meta-analysis shows the results as a forest plot.\r\n\r\n\r\nforest(\r\n  RR_effect_sizes$yi, # These are effect sizes from each row in database\r\n  RR_effect_sizes$vi, # These are variances from each row in database\r\n  annotate = FALSE, # Setting this to false prevents R from including CIs for each of the 84 effect sizes in the forest plot. Setting it to TRUE is generally a good practice, but would make this plot cluttered.\r\n  slab = random_effect_model_results$slab, # Along the left hand side, we want each individual effect size labelled with author names and publication years. We specified this when we calculated the summary effect size above\r\n  xlab = \"ln(Response Ratio)\", # Label for x-axis\r\n  cex = .8, # Text side for study labels\r\n  pch = 15, # shape of bars in forest plot\r\n  cex.lab = 1, # Size of x-axis label\r\n)\r\n\r\n# This is code adds in the summary effect size for your random effects meta-analysis\r\naddpoly(\r\n  random_effect_model_results, # specify the model where your summary effect comes from.\r\n  col = \"orange\", # Pick a color that makes the summary effect stand out from the other effect sizes.\r\n  cex = 1, # size for the text associates with summary effect\r\n  annotate = TRUE, # Usually, we set this to true. It makes sure effect size and CI for summary effect size is printed on forest plot.\r\n  mlab = \"Summary\" # Label for summary effect size\r\n)\r\n\r\n\r\n\r\n\r\nThe plot shows the estimated effect size for each study (the squares are scaled by sample size as larger samples get greater weight in the model) and the pooled effect size. We can see that the effect size of -0.21 does not cross the line of no effect (the dotted line at 0) and therefore can be confident that there is a small negative effect of invasive trees on native species richness.\r\nFurther considerations\r\nPublication bias (the tendency for studies with a certain direction to be published) is a major impediment to meta-analysis. We can reduce the potential for publication bias by using unpublished studies in our meta-analysis, but these may be hidden away “in file draws” and inaccessible. We can not detect publication bias in our meta-analysis but can infer that patterns appear consistent with publication bias. There are, of course, other explanations for these patterns (such as heterogeneity, location bias, differences in the intensity of an intervention, poor design of smaller studies, etc.)\r\nOne of the main ways of doing this has been visually using funnel plots. Funnel plots are a scatterplot of the effect size estimates from each study against the study size or precision. Small studies should scatter across the bottom of the plot and as studies get larger the spread should be narrower.\r\n\r\n\r\nfunnel(random_effect_model_results)\r\n\r\n\r\n\r\n\r\nEach dot in the funnel plot is a study, larger studies (with higher power) are towards the top and smaller studies toward the bottom. A meta-analysis with no publication bias would have all points falling within the confidence limits (dotted lines) and roughly symmetrical either side of the “funnel”.\r\nThere are many ways to assess publication bias (e.g. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724). It is important to remember that although funnel plots are the most popular they may not be the best (especially in high heterogenity and small sample size situations) way.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T14:42:52+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/What_is_systematic_review/",
+    "title": "What is 'Systematic Review'?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\n\r\nIt is not just a review done systematically!\r\n\r\nSystematic review\r\nSystematic reviews were first developed in the medicine and health sector to synthesise primary research whilst reducing biases. Systematic reviews seek to provide an unbiased summary of estimated effects of interventions, with indications about the implications for policy, practice and future research. They typically focused on narrow questions that are targeted at single interventions and are thus a lot less broad than systematic maps and scoping studies.\r\nSystematic reviews follow a well-defined set of steps to help reduce bias and provide the best possible evidence to decision makers. These steps include:\r\n1. Question setting (using PICO or similar tools to help formulate a good question)\r\nAt the planning stage it might not be obvious what type of review you need. Developing a “good” question using, for example, the PICO approach will allow you to decide on which review type is appropriate. PICO stands for Population (or Problem), Intervention or Exposure, Comparitor or Control, and Outcome. A good example from the CEE website is for a research question on the effectiveness of marine protected areas for conserving commercially important fish species.\r\nP = Populations of commercially important fish species,\r\nI = Establishment of marine protected area,\r\nC = Area with no protection or limited protection\r\nO = Relative change in fish populations\r\n2. Scoping\r\nTo reduce research waste it is important that you first search for published or ongoing reviews that address your question.\r\nThis can save you time (if a review has been done then you can use that)\r\nIf a review was published a few years ago and new studies have been published you could update the review with this new information\r\nAt this stage if there are no published reviews it can be useful to do some preliminary searches to test out the search strings you will use in the Searching stage\r\n3. Protocol\r\nA peer-reviewed and published plan of how and why the systematic review will be carried out\r\n4. Searching\r\nFinding the literature that focuses on your topic - this is the “data collection stage”\r\n5. Screening\r\nSearches typically return studies that do not fit your inclusion criteria (e.g. they might not measure an outcome in the way that other studies do and therefore are not comparable)\r\nScreening is filtering out the results of the searching that are not relevant to your particular question\r\nEach screening decision (include or exclude) should be recorded\r\n6. Data Extraction\r\nFrom the included studies recording metadata, data and where appropriate statistics on your outcome of interest\r\n7. Critical Appraisal\r\nA vital stage that is often overlooked.\r\nAll studies are not equally valid for your question and you need to identify areas that risk biasing the outcome of the synthesis\r\nYou can not just report the outcomes as listed in the paper by the authors as errors in interpretation, and questionable research practices are common in the published literature\r\n8. Synthesis\r\nA descriptive summary of the evidence\r\nThis can be through a meta-analysis if you have extracted effect sizes from the studies\r\n9. Final Review\r\nPeer-reviewed and published\r\n10. Communication\r\nThrough lay-summaries and other communication channels\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T10:47:14+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/What_type_of_review/",
+    "title": "Which type of review should I do?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\nThere are a number of decision trees to aid choosing a review methodology. Here I have adapted the “Knowledge Synthesis Decision Tool” from Library Services, University Health Toronto. I removed the decision point around narrative review as, although an argument is put forward for them I can not see that the risk of bias for decision makers can be adequately reduced to make these useful.\r\n\r\n\r\n\r\nFor further information on these review types:\r\nRapid review\r\nScoping Reviews/Systematic Map\r\nUmbrella Review/Review of reviews\r\nSystematic Review\r\nSystematic Review & meta-analysis\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T09:17:43+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/Where_to_get_training_and_help/",
+    "title": "Where to get training and help?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-28",
+    "categories": [],
+    "contents": "\r\nThe Collaboration for Environmental Evidence (CEE)\r\nCEE is an open community of practice that works toward sustainability and conservation of biodiversity by delivering the highest quality evidence synthesis. They provide guidelines as well as a journal dedicated to publishing protocols and evidence synthesis outputs.\r\nThey have a dedicated training programme which is available for free here as well as workshops that may have a cost associated with them.\r\nOther useful resources from CEE include a database of previous evidence synthesis outputs, plain language summaries of recent CEE Systematic Reviews and Maps, and resources for those commissioning systematic reviews and maps.\r\nYour academic librarians\r\nLibrarians are a much under-utilised resource. They are experts in finding literature and will often be happy to help with, for example, developing search strings and identifying databases to search on.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-07-28T09:39:14+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/What_is_Evidence_synthesis/",
     "title": "What is 'Evidence Synthesis'?",
     "description": {},
@@ -14,57 +82,6 @@
     "contents": "\r\nThere are a variety of different ways that the term “Evidence synthesis” has been defined. Here we try and come up with a single sentence definition and then expand on this to talk about why evidence synthesis is important. On this website we will highlight different tools and approaches that can be used to carry out evidence synthesis and also highlight ways to identify where bias may influence the evidence synthesis presented to a decision maker. We hope to develop this website as a source of information and discussion on all aspects of evidence synthesis but wish to retain a focus on our main interests which are wildlife conservation and management. Evidence synthesis researchers are generally very interdisciplinary because the problems that we seek to address are found across different areas of society and science. Often advances in evidence synthesis tools come from the medical field but are then adapted and adopted for use in other fields. There is now a strong history of evidence synthesis in other disciplines such as education, welfare, conservation, policing, international development, and so on.\r\nA single sentence definition of “Evidence Synthesis”\r\n\r\n“Bringing together evidence from a variety of sources in a robust and transparent way to help inform decisions about specific issues or interventions”\r\n\r\nWhat is evidence?\r\nEvidence in “Evidence synthesis” is often (mistakenly) thought to only encompass peer-reviewed scientific literature. This, of course, does make up a large and important evidence resource but other sources of evidence are also seen as important. For example, reports from conservation organisations, governments, local managers, local societies (e.g. bird clubs) could all be considered evidence. We often refer to these types of reports as “grey literature”. Other sources of evidence include expert opinions - this is particular important for new emerging issues, but can be used to supplement other sources of evidence. Stakeholder opinions can also be considered evidence - in medicine this might be the patients who benefit from a particular drug, in conservation these could be local and/or indigenous people. As you can see the evidence that we use in evidence synthesis can be a lot wider than just the published scientific literature. One source of evidence in conservation which might not be considered in other fields is the results of simulation models where we do not have enough information about a species but using our theoretical knowledge or information from other closely related species we can simulate the patterns and processes associated with the species even if we do not have much chance to observe it in the wild (Critically Endangered species for example).\r\nWhy do we need evidence synthesis?\r\nThere are many reasons why we should not just use a single study or a single piece of evidence to base a decision on. One of the main reasons is that single studies are like a snapshot and as such may not give us a full picture of the size or direction (positive or negative) of an effect of an intervention. Replication is a cornerstone of science and without replication we can not be certain of our findings. Replication allows us to know how general the effect we observed is and how generalisable it is to other conditions (e.g. in other countries, climates, habitats, etc.). Evidence synthesis brings together these replications and determines the pooled effect (either qualitatively or quantitatively).\r\nSingle studies may be plagued by different biases that we as researchers may not be aware of. These biases are not necessarily the result of nefarious actions by the researchers (e.g. data fabrication) but there has been some recent well-publicised examples of this. A lot of “questionable research practices” come from actions that are mostly “bad practice” or result from bad training. One common action (which is how I was trained as a student) is known as “HARKing” - Hypothesizing after the results are known. This is where we start a study with one hypothesis in mind but after we see patterns in the data we omit that hypothesis and choose one that fits the data better (and tells a neater or more exciting story). Evidence synthesis assesses the quality of studies to try and reduce some of these biases.\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2022-07-27T14:22:35+02:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/What_type_of_review/",
-    "title": "Which type of review should I do?",
-    "description": {},
-    "author": [
-      {
-        "name": "Matt",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-27",
-    "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2022-07-27T16:35:42+02:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/What_is_meta_analysis/",
-    "title": "What is 'Meta-analysis'?",
-    "description": {},
-    "author": [
-      {
-        "name": "Matt",
-        "url": {}
-      }
-    ],
-    "date": "2020-07-19",
-    "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2020-07-19T10:03:04+02:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/What_is_systematic_review/",
-    "title": "What is 'Systematic Review'?",
-    "description": {},
-    "author": [
-      {
-        "name": "Matt",
-        "url": {}
-      }
-    ],
-    "date": "2020-07-19",
-    "categories": [],
-    "contents": "\r\nIt is not just a review done systematically\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2020-07-19T10:02:58+02:00",
     "input_file": {}
   }
 ]

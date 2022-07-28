@@ -10,6 +10,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+There are a number of decision trees to aid choosing a review methodology. Here I have adapted the ["Knowledge Synthesis Decision Tool" from Library Services, University Health Toronto](https://guides.hsict.library.utoronto.ca/SMH/systematic/decisiontool). I removed the decision point around narrative review as, although an [argument](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6001568/) is put forward for them I can not see that the risk of bias for decision makers can be adequately reduced to make these useful.  
+
+
 
 ```{r, echo=FALSE,layout="l-screen-inset"}
 library(DiagrammeR)
@@ -54,3 +57,15 @@ grViz(diagram = "digraph flowchart {
 
 
 ```
+
+
+## For further information on these review types:
+* [Rapid review](https://drmattg.github.io/Evidence_synthesis/posts/What_is_rapid_review/)
+
+* [Scoping Reviews/Systematic Map](https://drmattg.github.io/Evidence_synthesis/posts/What_is_systematic_mapping/)
+
+* [Umbrella Review/Review of reviews](https://drmattg.github.io/Evidence_synthesis/posts/What_is_review_review/)
+
+* [Systematic Review](https://drmattg.github.io/Evidence_synthesis/posts/What_is_systematic_review/)
+
+* [Systematic Review & meta-analysis](https://drmattg.github.io/Evidence_synthesis/posts/What_is_meta_analysis/)

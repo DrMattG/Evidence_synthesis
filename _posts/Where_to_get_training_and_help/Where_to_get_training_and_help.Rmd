@@ -1,0 +1,25 @@
+---
+title: "Where to get training and help?"
+author: "Matt"
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The Collaboration for Environmental Evidence (CEE)
+
+[CEE](https://environmentalevidence.org/) is an open community of practice that works toward sustainability and conservation of biodiversity by delivering the highest quality evidence synthesis. They provide [guidelines](https://environmentalevidence.org/information-for-authors/) as well as a [journal](https://environmentalevidencejournal.biomedcentral.com/) dedicated to publishing protocols and evidence synthesis outputs. 
+
+They have a dedicated training programme which is available for free [here](https://synthesistraining.github.io/) as well as [workshops](https://environmentalevidence.org/training-workshops/) that may have a cost associated with them.
+
+Other useful resources from CEE include a database of [previous evidence synthesis outputs](https://environmentalevidence.org/ceeder/), plain language summaries of [recent CEE Systematic Reviews and Maps](https://environmentalevidence.org/policy-briefs/), and [resources for those commissioning systematic reviews and maps](https://environmentalevidence.org/information-for-commissioners/). 
+
+## Your academic librarians
+
+Librarians are a much under-utilised resource. They are experts in finding literature and will often be happy to help with, for example, developing search strings and identifying databases to search on. 
+

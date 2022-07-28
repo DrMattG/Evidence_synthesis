@@ -6,4 +6,130 @@ output:
     self_contained: false
 ---
 
-## 
+Meta-analysis is the statistical combination of the results from studies that are included in a systematic review to reach a pooled conclusion about the effect of an intervention.The power to detect an effect in a meta-analysis is usually higher than the power in any of the studies that are included. This is a major benefit of using meta-analysis to determine the effect of interventions. We get a better (more robust) estimate because we can combine several smaller studies. 
+
+In ecology, the size of the effects of interest are generally small and between-study heterogeneity generally high. We normally use a random-effects meta-analysis in ecology because we do not assume that the studies will estimate the same true effect, rather that they estimate a distribution of effects.
+
+There are many different R packages that can be used for Meta-analysis - the most well-known is metafor which contains functions for the statistical modelling needed. This [book](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/) contains a lot of useful information and code to carry out a meta-analysis. 
+
+
+## Random effects meta-analysis example
+
+We can make use of a dataset that has already been compiled and used in this [excellent book](https://bookdown.org/robcrystalornelas/meta-analysis_of_ecological_data/). The data consist  information from 62 Articles on 39 species of invasive trees.The included studies ["...had to identify at least one invasive species and the invasive species had to be present within a natural ecosystem rather than agriculture or aquaculture systems (Population). All articles had to include replicate plots or study sites where invasive species were present (Intervention). The intervention could not be an assemblage of invasive species, but rather had to focus on the impacts of a single invasive species on native species richness...The study had to have a control group where the invasive species was either not present or present at very low densities (Control). We extracted measurements of species richness or higher-order taxonomic richness (Outcome)."](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.3082) 
+
+### First we load the data
+
+```{r load the data}
+dat <- read.csv("https://raw.githubusercontent.com/robcrystalornelas/meta-analysis_of_ecological_data/master/MaEDR_data.csv")
+
+
+```
+
+### Next calculate the effect size
+
+An effect size is the (quite literately) the size of the effect of an intervention or exposure. For example, the (standardised) difference between the control and intervention in terms of native species richness. It can be expressed in a number of different ways. The most common ways in ecology include the standardised mean difference (Hedge's g) and the Response Ratio. Hedge's g is useful because it standardises the effects from each study so that they are measured on the same unit-less scale and adjusts for the sample size and variability in the control and intervention groups. 
+
+The Response Ratio describes the ratio of the mean outcome from the control and the mean outcome from the intervention. It is often expressed as the Log Response Ratio. For the example data, a negative Log Response Ratio indicates that an invasive species is associated with a decrease in native species richness and a positive Log Response Ration indicates the opposite. Converting Log Response Ratios back to Response Ratios mean we can give a percentage change in richness with invasive species. 
+
+Having a value of zero in either the control or intervention group means that the Response Ratio can not be calculated. There are some adjustments (which are not universally agreed upon) that can be made to the data - e.g. replacing 0 with 0.1. 
+
+
+```{r effect size}
+library(metafor)
+
+# Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/
+
+RR_effect_sizes <- escalc( # Function for calculating effect sizes.
+    "ROM",
+    # Specify the effect size we want to calculate. In this case ROM for the Ratio of Means or Response Ratio
+    m1i = mean_invaded,
+    # mean richness at invaded sites
+    n1i = sample_size_invaded,
+    # invaded site sample size
+    sd1i = SD_invaded,
+    # invaded site SD
+    m2i = mean_control,
+    # mean richness at control sites
+    n2i = sample_size_control,
+    # control site sample size
+    sd2i = SD_control,
+    # control site SD
+    data = dat # This is where the escalc function can find all the data for our meta-analysis
+  )
+
+```
+
+This appends two columns to the dataset. *yi* is the effect size from each row (Studies can have multiple effects reported - each effect gets its own row in the dataset). *vi* is the variance from each row 
+
+
+### Run the meta-analysis
+
+
+```{r run random effects meta-analysis}
+# Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/
+
+random_effect_model_results <- rma(yi, # this is the effect size from each row in database
+                                   vi, # measure of variance from each row in database
+                                   method = "REML", # random effect meta-analyses
+                                   slab = paste(lastname, publication_year, sep = ""), # This line of code prepares study labels for the forest plot
+                                   data = RR_effect_sizes) 
+```
+Studies with missing data are removed from the analysis. 
+
+
+```{r look at the results}
+
+random_effect_model_results
+
+```
+
+The pooled effect estimate is -0.21 indicating that there is a negative effect of invasive trees on native species richness. The effect estimate does not cross 0 (the line of no effect) according to the 95% Confidence Intervals (-0.31 - -0.11). 
+
+
+## Data visualization
+
+Typically meta-analysis shows the results as a forest plot. 
+
+```{r forest plot, layout="l-body", fig.height=15}
+
+forest(
+  RR_effect_sizes$yi, # These are effect sizes from each row in database
+  RR_effect_sizes$vi, # These are variances from each row in database
+  annotate = FALSE, # Setting this to false prevents R from including CIs for each of the 84 effect sizes in the forest plot. Setting it to TRUE is generally a good practice, but would make this plot cluttered.
+  slab = random_effect_model_results$slab, # Along the left hand side, we want each individual effect size labelled with author names and publication years. We specified this when we calculated the summary effect size above
+  xlab = "ln(Response Ratio)", # Label for x-axis
+  cex = .8, # Text side for study labels
+  pch = 15, # shape of bars in forest plot
+  cex.lab = 1, # Size of x-axis label
+)
+
+# This is code adds in the summary effect size for your random effects meta-analysis
+addpoly(
+  random_effect_model_results, # specify the model where your summary effect comes from.
+  col = "orange", # Pick a color that makes the summary effect stand out from the other effect sizes.
+  cex = 1, # size for the text associates with summary effect
+  annotate = TRUE, # Usually, we set this to true. It makes sure effect size and CI for summary effect size is printed on forest plot.
+  mlab = "Summary" # Label for summary effect size
+)
+```
+
+The plot shows the estimated effect size for each study (the squares are scaled by sample size as larger samples get greater weight in the model) and the pooled effect size. We can see that the effect size of -0.21 does not cross the line of no effect (the dotted line at 0) and therefore can be confident that there is a small negative effect of invasive trees on native species richness. 
+
+
+### Further considerations
+
+Publication bias (the tendency for studies with a certain direction to be published) is a major impediment to meta-analysis. We can reduce the potential for publication bias by using unpublished studies in our meta-analysis, but these may be hidden away "in file draws" and inaccessible. We can not detect publication bias in our meta-analysis but can infer that patterns appear consistent with publication bias. There are, of course, other explanations for these patterns (such as heterogeneity, location bias, differences in the intensity of an intervention, poor design of smaller studies, etc.) 
+
+One of the main ways of doing this has been visually using funnel plots. Funnel plots are a scatterplot of the effect size estimates from each study against the study size or precision. Small studies should scatter across the bottom of the plot and as studies get larger the spread should be narrower. 
+
+```{r}
+funnel(random_effect_model_results)
+```
+
+Each dot in the funnel plot is a study, larger studies (with higher power) are towards the top and smaller studies toward the bottom. A meta-analysis with no publication bias would have all points falling within the confidence limits (dotted lines) and roughly symmetrical either side of the "funnel". 
+
+There are many ways to assess publication bias (e.g. https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724). It is important to remember that although funnel plots are the most popular they may not be the best (especially in high heterogenity and small sample size situations) way. 
+
+
+
+

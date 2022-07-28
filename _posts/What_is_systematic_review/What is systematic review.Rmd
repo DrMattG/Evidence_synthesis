@@ -6,4 +6,81 @@ output:
     self_contained: false
 ---
 
-## It is not just a review done systematically
+> It is not just a review done systematically!
+
+# Systematic review
+
+Systematic reviews were first developed in the medicine and health sector to synthesise primary research whilst reducing biases. Systematic reviews seek to provide an unbiased summary of estimated effects of interventions, with indications about the implications for policy, practice and future research. They typically focused on narrow questions that are targeted at single interventions and are thus a lot less broad than [systematic maps and scoping studies](https://drmattg.github.io/Evidence_synthesis/posts/What_is_systematic_mapping/).
+
+Systematic review is appropriate for questions that address the effectiveness of interventions, the impact of an action on a population, the quantity and quality of research on a specific question, the relative effectiveness and cost of competing interventions. 
+
+Systematic reviews follow a well-defined set of steps to help reduce bias and provide the best possible evidence to decision makers. These steps include:
+
+### 1. Question setting (using PICO or similar tools to help formulate a good question)
+
+At the planning stage it might not be obvious what type of review you need. Developing a "good" question using, for example, the PICO approach will allow you to decide on which review type is appropriate. PICO stands for *Population* (or *Problem*), *Intervention or Exposure*, *Comparitor or Control*, and *Outcome*. A good example from the [CEE website](https://environmentalevidence.org/information-for-authors/2-need-for-evidence-synthesis-type-and-review-team/) is for a research question on the effectiveness of marine protected areas for conserving commercially important fish species. 
+
+* P = Populations of commercially important fish species,
+
+* I = Establishment of marine protected area,
+
+* C = Area with no protection or limited protection
+
+* O = Relative change in fish populations 
+
+### 2. Scoping 
+
+* To reduce research waste it is important that you first search for published or ongoing reviews that address your question. 
+
+* This can save you time (if a review has been done then you can use that) 
+
+* If a review was published a few years ago and new studies have been published you could update the review with this new information
+
+* At this stage if there are no published reviews it can be useful to do some preliminary searches to test out the search strings you will use in the Searching stage
+
+
+### 3. Protocol 
+
+* A peer-reviewed and published plan of how and why the systematic review will be carried out
+
+### 4. Searching 
+
+* Finding the literature that focuses on your topic - this is the "data collection stage"
+
+### 5. Screening 
+
+* Searches typically return studies that do not fit your inclusion criteria (e.g. they might not measure an outcome in the way that other studies do and therefore are not comparable)
+
+* Screening is filtering out the results of the searching that are not relevant to your particular question
+
+* Each screening decision (include or exclude) should be recorded 
+
+### 6. Data Extraction 
+
+* From the included studies recording metadata, data and where appropriate statistics on your outcome of interest
+
+### 7. Critical Appraisal 
+
+* A vital stage that is often overlooked. 
+
+* All studies are not equally valid for your question and you need to identify areas that risk biasing the outcome of the synthesis
+
+* You can not just report the outcomes as listed in the paper by the authors as errors in interpretation, and questionable research practices are common in the published literature
+
+### 8. Synthesis 
+
+* A descriptive summary of the evidence
+
+* This can be through a meta-analysis if you have extracted effect sizes from the studies
+
+### 9. Final Review 
+
+* Peer-reviewed and published
+
+### 10. Communication 
+
+* Through lay-summaries and other communication channels
+
+
+
+
