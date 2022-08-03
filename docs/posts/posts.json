@@ -17,6 +17,23 @@
     "input_file": {}
   },
   {
+    "path": "posts/What_type_of_review/",
+    "title": "Which type of review should I do?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-03",
+    "categories": [],
+    "contents": "\r\nThere are a number of decision trees to aid choosing a review\r\nmethodology. Here I have adapted the “Knowledge\r\nSynthesis Decision Tool” from Library Services, University Health\r\nToronto. I removed the decision point around narrative review as,\r\nalthough an argument\r\nis put forward for them I can not see that the risk of bias for decision\r\nmakers can be adequately reduced to make these useful.\r\n\r\n\r\n\r\nFor further\r\ninformation on these review types:\r\nRapid\r\nreview\r\nScoping\r\nReviews/Systematic Map\r\nUmbrella\r\nReview/Review of reviews\r\nSystematic\r\nReview\r\nSystematic\r\nReview & meta-analysis\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-08-03T20:51:36+02:00",
+    "input_file": "What_type_of_review.knit.md"
+  },
+  {
     "path": "posts/What_is_meta_analysis/",
     "title": "What is 'Meta-analysis'?",
     "description": {},
@@ -82,23 +99,6 @@
     "contents": "\r\n\r\nIt is not just a review done systematically!\r\n\r\nSystematic review\r\nSystematic reviews were first developed in the medicine and health sector to synthesise primary research whilst reducing biases. Systematic reviews seek to provide an unbiased summary of estimated effects of interventions, with indications about the implications for policy, practice and future research. They typically focused on narrow questions that are targeted at single interventions and are thus a lot less broad than systematic maps and scoping studies.\r\nSystematic reviews follow a well-defined set of steps to help reduce bias and provide the best possible evidence to decision makers. These steps include:\r\n1. Question setting (using PICO or similar tools to help formulate a good question)\r\nAt the planning stage it might not be obvious what type of review you need. Developing a “good” question using, for example, the PICO approach will allow you to decide on which review type is appropriate. PICO stands for Population (or Problem), Intervention or Exposure, Comparitor or Control, and Outcome. A good example from the CEE website is for a research question on the effectiveness of marine protected areas for conserving commercially important fish species.\r\nP = Populations of commercially important fish species,\r\nI = Establishment of marine protected area,\r\nC = Area with no protection or limited protection\r\nO = Relative change in fish populations\r\n2. Scoping\r\nTo reduce research waste it is important that you first search for published or ongoing reviews that address your question.\r\nThis can save you time (if a review has been done then you can use that)\r\nIf a review was published a few years ago and new studies have been published you could update the review with this new information\r\nAt this stage if there are no published reviews it can be useful to do some preliminary searches to test out the search strings you will use in the Searching stage\r\n3. Protocol\r\nA peer-reviewed and published plan of how and why the systematic review will be carried out\r\n4. Searching\r\nFinding the literature that focuses on your topic - this is the “data collection stage”\r\n5. Screening\r\nSearches typically return studies that do not fit your inclusion criteria (e.g. they might not measure an outcome in the way that other studies do and therefore are not comparable)\r\nScreening is filtering out the results of the searching that are not relevant to your particular question\r\nEach screening decision (include or exclude) should be recorded\r\n6. Data Extraction\r\nFrom the included studies recording metadata, data and where appropriate statistics on your outcome of interest\r\n7. Critical Appraisal\r\nA vital stage that is often overlooked.\r\nAll studies are not equally valid for your question and you need to identify areas that risk biasing the outcome of the synthesis\r\nYou can not just report the outcomes as listed in the paper by the authors as errors in interpretation, and questionable research practices are common in the published literature\r\n8. Synthesis\r\nA descriptive summary of the evidence\r\nThis can be through a meta-analysis if you have extracted effect sizes from the studies\r\n9. Final Review\r\nPeer-reviewed and published\r\n10. Communication\r\nThrough lay-summaries and other communication channels\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2022-07-28T10:47:14+02:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/What_type_of_review/",
-    "title": "Which type of review should I do?",
-    "description": {},
-    "author": [
-      {
-        "name": "Matt",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-28",
-    "categories": [],
-    "contents": "\r\nThere are a number of decision trees to aid choosing a review methodology. Here I have adapted the “Knowledge Synthesis Decision Tool” from Library Services, University Health Toronto. I removed the decision point around narrative review as, although an argument is put forward for them I can not see that the risk of bias for decision makers can be adequately reduced to make these useful.\r\n\r\n\r\n\r\nFor further information on these review types:\r\nRapid review\r\nScoping Reviews/Systematic Map\r\nUmbrella Review/Review of reviews\r\nSystematic Review\r\nSystematic Review & meta-analysis\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2022-07-28T09:17:43+02:00",
     "input_file": {}
   },
   {
