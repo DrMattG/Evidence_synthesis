@@ -5,4 +5,7 @@ output:
   distill::distill_article:
     self_contained: false
 ---
-tbc
+
+Systematic maps (also known as Evidence gap maps or Evidence maps) were designed to give an overview of the available evidence on a broad topic (Saran and White 2018). They do not seek to answer narrow well-defined questions (as systematic reviews do) but rather to provide a means to identify and catalogue available evidence on policy-relevant questions (James et al. 2016). Systematic maps have been realised in a variety of different ways but generally provide the results in a user-friendly fashion such as graphs, maps or searchable databases (Miake-Lye et al. 2016). Increasingly interactive plotting and mapping is being used to provide a dynamic output to users (such as EviAtlas; Haddaway et al. 2019). 
+
+It is important that systematic maps are not portrayed as an end in themselves. Without further evidence synthesis decision makers need to be cautious about making decisions based on the weight of evidence alone (i.e.  vote-counting, c.f. Hedges & Olkin 1980). Systematic maps can not replace the rigor of systematic reviews but can give decision-makers an understanding of the evidence base by highlighting gaps in, or clusters of, evidence. They can highlight where evidence synthesis can take place (i.e. there is enough available evidence for a systematic review) or where primary research is required (i.e. there is a lack of evidence). 

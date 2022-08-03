@@ -6,4 +6,4 @@ output:
     self_contained: false
 ---
 
-tbc
+Reviews of reviews or umbrella reviews aim to provide a summary of evidence from more than one systematic review. The planning and steps involved with them are very similar to a systematic review except that only systematic reviews are included in the review. These are still critically appraised to ensure internal and external validity (for example, that they are actually a systematic review with a protocol etc and that they fit the review question that you are asking)

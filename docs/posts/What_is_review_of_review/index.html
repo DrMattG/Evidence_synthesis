@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,9 +52,9 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span. { color: #00769e; } /* Normal */
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { color: #657422; } /* Attribute */
@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-07-28"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-07-28"/>
+<meta property="article:published" itemprop="datePublished" content="2022-08-03"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-08-03"/>
 <meta name="article:author" content="Matt"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What are Reviews of Reviews?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-28-2022"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What are Reviews of Reviews?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["08-03-2022"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2072,6 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2092,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What are Reviews of Reviews?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-28T00:00:00.000+02:00","citationText":"Matt, 2022"}
+{"title":"What are Reviews of Reviews?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-03T00:00:00.000+02:00","citationText":"Matt, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2125,12 +2126,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
   Matt
   
-<br/>07-28-2022
+<br/>08-03-2022
 </div>
 
 <div class="d-article">
-<p>tbc</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Reviews of reviews or umbrella reviews aim to provide a summary of
+evidence from more than one systematic review. The planning and steps
+involved with them are very similar to a systematic review except that
+only systematic reviews are included in the review. These are still
+critically appraised to ensure internal and external validity (for
+example, that they are actually a systematic review with a protocol etc
+and that they fit the review question that you are asking)</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

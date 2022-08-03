@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,9 +52,9 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span. { color: #00769e; } /* Normal */
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { color: #657422; } /* Attribute */
@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-07-28"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-07-28"/>
+<meta property="article:published" itemprop="datePublished" content="2022-08-03"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-08-03"/>
 <meta name="article:author" content="Matt"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is systematic mapping?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-28-2022"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is systematic mapping?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["08-03-2022"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["What_is_systematic_mapping_files/anchor-4.2.2/anchor.min.js","What_is_systematic_mapping_files/bowser-1.9.3/bowser.min.js","What_is_systematic_mapping_files/distill-2.2.21/template.v2.js","What_is_systematic_mapping_files/jquery-3.6.0/jquery-3.6.0.js","What_is_systematic_mapping_files/jquery-3.6.0/jquery-3.6.0.min.js","What_is_systematic_mapping_files/jquery-3.6.0/jquery-3.6.0.min.map","What_is_systematic_mapping_files/popper-2.6.0/popper.min.js","What_is_systematic_mapping_files/tippy-6.2.7/tippy-bundle.umd.min.js","What_is_systematic_mapping_files/tippy-6.2.7/tippy-light-border.css","What_is_systematic_mapping_files/tippy-6.2.7/tippy.css","What_is_systematic_mapping_files/tippy-6.2.7/tippy.umd.min.js","What_is_systematic_mapping_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2072,6 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2092,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What is systematic mapping?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-28T00:00:00.000+02:00","citationText":"Matt, 2022"}
+{"title":"What is systematic mapping?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-03T00:00:00.000+02:00","citationText":"Matt, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2125,12 +2126,33 @@ document.addEventListener('DOMContentLoaded', function() {
   
   Matt
   
-<br/>07-28-2022
+<br/>08-03-2022
 </div>
 
 <div class="d-article">
-<p>tbc</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Systematic maps (also known as Evidence gap maps or Evidence maps)
+were designed to give an overview of the available evidence on a broad
+topic (Saran and White 2018). They do not seek to answer narrow
+well-defined questions (as systematic reviews do) but rather to provide
+a means to identify and catalogue available evidence on policy-relevant
+questions (James et al. 2016). Systematic maps have been realised in a
+variety of different ways but generally provide the results in a
+user-friendly fashion such as graphs, maps or searchable databases
+(Miake-Lye et al. 2016). Increasingly interactive plotting and mapping
+is being used to provide a dynamic output to users (such as EviAtlas;
+Haddaway et al. 2019).</p>
+<p>It is important that systematic maps are not portrayed as an end in
+themselves. Without further evidence synthesis decision makers need to
+be cautious about making decisions based on the weight of evidence alone
+(i.e. vote-counting, c.f. Hedges &amp; Olkin 1980). Systematic maps can
+not replace the rigor of systematic reviews but can give decision-makers
+an understanding of the evidence base by highlighting gaps in, or
+clusters of, evidence. They can highlight where evidence synthesis can
+take place (i.e. there is enough available evidence for a systematic
+review) or where primary research is required (i.e. there is a lack of
+evidence).</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
