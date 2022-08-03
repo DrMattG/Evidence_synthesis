@@ -17,23 +17,6 @@
     "input_file": {}
   },
   {
-    "path": "posts/What_type_of_review/",
-    "title": "Which type of review should I do?",
-    "description": {},
-    "author": [
-      {
-        "name": "Matt",
-        "url": {}
-      }
-    ],
-    "date": "2022-08-03",
-    "categories": [],
-    "contents": "\r\nThere are a number of decision trees to aid choosing a review\r\nmethodology. Here I have adapted the “Knowledge\r\nSynthesis Decision Tool” from Library Services, University Health\r\nToronto. I removed the decision point around narrative review as,\r\nalthough an argument\r\nis put forward for them I can not see that the risk of bias for decision\r\nmakers can be adequately reduced to make these useful.\r\n\r\n\r\n\r\nFor further\r\ninformation on these review types:\r\nRapid\r\nreview\r\nScoping\r\nReviews/Systematic Map\r\nUmbrella\r\nReview/Review of reviews\r\nSystematic\r\nReview\r\nSystematic\r\nReview & meta-analysis\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2022-08-03T20:51:36+02:00",
-    "input_file": "What_type_of_review.knit.md"
-  },
-  {
     "path": "posts/What_is_review_of_review/",
     "title": "What are Reviews of Reviews?",
     "description": {},
@@ -66,6 +49,23 @@
     "preview": {},
     "last_modified": "2022-08-03T21:00:29+02:00",
     "input_file": "What_is_systematic_mapping.knit.md"
+  },
+  {
+    "path": "posts/What_type_of_review/",
+    "title": "Which type of review should I do?",
+    "description": {},
+    "author": [
+      {
+        "name": "Matt",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-03",
+    "categories": [],
+    "contents": "\r\nThere are a number of decision trees to aid choosing a review\r\nmethodology. Here I have adapted the “Knowledge\r\nSynthesis Decision Tool” from Library Services, University Health\r\nToronto. I removed the decision point around narrative review as,\r\nalthough an argument\r\nis put forward for them I can not see that the risk of bias for decision\r\nmakers can be adequately reduced to make these useful.\r\n\r\n\r\n\r\nFor further\r\ninformation on these review types:\r\nRapid\r\nreview\r\nScoping\r\nReviews/Systematic Map\r\nUmbrella\r\nReview/Review of reviews\r\nSystematic\r\nReview\r\nSystematic\r\nReview & meta-analysis\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-08-03T21:03:49+02:00",
+    "input_file": "What_type_of_review.knit.md"
   },
   {
     "path": "posts/What_is_meta_analysis/",
