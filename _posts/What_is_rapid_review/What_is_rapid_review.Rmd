@@ -5,4 +5,58 @@ output:
   distill::distill_article:
     self_contained: false
 ---
-tbc
+
+The need for evidence informed decisions combined with short time frames has meant that "rapid reviews" are increasingly commissioned by research funders. However, there is no agreed definition of what a rapid review is. This ambiguity makes it harder for comparative studies of full (gold standard) systematic reviews and so-called rapid reviews. 
+
+Guidance from the [Cochrane Rapid Reviews Methods Group](https://methods.cochrane.org/rapidreviews/cochrane-rr-methods) suggests places in the review process which can be sped up (based on expert opinions). These include:
+
+* Rapid Reviews should have a protocol
+
+* Involving stakeholders and review commissioners early in the project to refine the review question, inclusion criteria, and outcomes of interest
+
+* Involve stakeholders throughout the review to ensure the question remains fit for purpose in face of any changes that occur during the review
+
+* Clearly define the population, intervention, comparator and outcomes.
+
+* Limit the number of interventions and comparators 
+
+* Limit the number of outcomes, with a focus on those most important for decision-making
+
+* Consider date restrictions in search (justify these)
+
+* Limit the publication language to English (add others where justified)
+
+* Focus on including Systematic reviews
+
+* Place emphasis on higher quality study designs 
+
+* Involve an information specialist.
+* Limit main database searching to a couple of databases only
+
+* Consider peer review of at least one search strategy
+
+* Limit gray literature and supplemental searching
+
+* Calibrate and test a standardised review form with all reviewers
+
+* Dual screen of at least 20% (ideally more) of abstracts, with conflict resolution.
+
+* Use one reviewer to screen the remaining abstracts and a second reviewer to screen all excluded abstracts, and if needed resolve conflicts. 
+
+* Use a single reviewer to extract data using a piloted form. Use a second reviewer to check for correctness and completeness of extracted data.
+
+* Limit data extraction to a minimal set of required data items.
+
+* Consider using data from existing Systematic Reviews to reduce time spent on data extraction.
+
+* Use a valid risk of bias tool, if available for the included study designs.
+
+* Use a single reviewer to rate risk of bias, with full verification of all judgments (and support statements) by a second reviewer
+
+* Limit risk of bias ratings to the most important outcomes, with a focus on those most important for decision-making.
+
+* Synthesize evidence narratively.
+* Consider a meta-analysis only if appropriate (i.e., studies are similar enough to pool)
+
+* Use a single reviewer to grade the certainty of evidence, with verification of all judgments by a second reviewer. 
+

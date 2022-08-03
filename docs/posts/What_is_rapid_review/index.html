@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,9 +52,9 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span. { color: #00769e; } /* Normal */
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { color: #657422; } /* Attribute */
@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-07-28"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-07-28"/>
+<meta property="article:published" itemprop="datePublished" content="2022-08-03"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-08-03"/>
 <meta name="article:author" content="Matt"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is Rapid Review?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-28-2022"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is Rapid Review?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["08-03-2022"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["What_is_rapid_review_files/anchor-4.2.2/anchor.min.js","What_is_rapid_review_files/bowser-1.9.3/bowser.min.js","What_is_rapid_review_files/distill-2.2.21/template.v2.js","What_is_rapid_review_files/jquery-3.6.0/jquery-3.6.0.js","What_is_rapid_review_files/jquery-3.6.0/jquery-3.6.0.min.js","What_is_rapid_review_files/jquery-3.6.0/jquery-3.6.0.min.map","What_is_rapid_review_files/popper-2.6.0/popper.min.js","What_is_rapid_review_files/tippy-6.2.7/tippy-bundle.umd.min.js","What_is_rapid_review_files/tippy-6.2.7/tippy-light-border.css","What_is_rapid_review_files/tippy-6.2.7/tippy.css","What_is_rapid_review_files/tippy-6.2.7/tippy.umd.min.js","What_is_rapid_review_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2072,6 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2092,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What is Rapid Review?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-28T00:00:00.000+02:00","citationText":"Matt, 2022"}
+{"title":"What is Rapid Review?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-08-03T00:00:00.000+02:00","citationText":"Matt, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2125,12 +2126,71 @@ document.addEventListener('DOMContentLoaded', function() {
   
   Matt
   
-<br/>07-28-2022
+<br/>08-03-2022
 </div>
 
 <div class="d-article">
-<p>tbc</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The need for evidence informed decisions combined with short time
+frames has meant that “rapid reviews” are increasingly commissioned by
+research funders. However, there is no agreed definition of what a rapid
+review is. This ambiguity makes it harder for comparative studies of
+full (gold standard) systematic reviews and so-called rapid reviews.</p>
+<p>Guidance from the <a
+href="https://methods.cochrane.org/rapidreviews/cochrane-rr-methods">Cochrane
+Rapid Reviews Methods Group</a> suggests places in the review process
+which can be sped up (based on expert opinions). These include:</p>
+<ul>
+<li><p>Rapid Reviews should have a protocol</p></li>
+<li><p>Involving stakeholders and review commissioners early in the
+project to refine the review question, inclusion criteria, and outcomes
+of interest</p></li>
+<li><p>Involve stakeholders throughout the review to ensure the question
+remains fit for purpose in face of any changes that occur during the
+review</p></li>
+<li><p>Clearly define the population, intervention, comparator and
+outcomes.</p></li>
+<li><p>Limit the number of interventions and comparators</p></li>
+<li><p>Limit the number of outcomes, with a focus on those most
+important for decision-making</p></li>
+<li><p>Consider date restrictions in search (justify these)</p></li>
+<li><p>Limit the publication language to English (add others where
+justified)</p></li>
+<li><p>Focus on including Systematic reviews</p></li>
+<li><p>Place emphasis on higher quality study designs</p></li>
+<li><p>Involve an information specialist.</p></li>
+<li><p>Limit main database searching to a couple of databases
+only</p></li>
+<li><p>Consider peer review of at least one search strategy</p></li>
+<li><p>Limit gray literature and supplemental searching</p></li>
+<li><p>Calibrate and test a standardised review form with all
+reviewers</p></li>
+<li><p>Dual screen of at least 20% (ideally more) of abstracts, with
+conflict resolution.</p></li>
+<li><p>Use one reviewer to screen the remaining abstracts and a second
+reviewer to screen all excluded abstracts, and if needed resolve
+conflicts.</p></li>
+<li><p>Use a single reviewer to extract data using a piloted form. Use a
+second reviewer to check for correctness and completeness of extracted
+data.</p></li>
+<li><p>Limit data extraction to a minimal set of required data
+items.</p></li>
+<li><p>Consider using data from existing Systematic Reviews to reduce
+time spent on data extraction.</p></li>
+<li><p>Use a valid risk of bias tool, if available for the included
+study designs.</p></li>
+<li><p>Use a single reviewer to rate risk of bias, with full
+verification of all judgments (and support statements) by a second
+reviewer</p></li>
+<li><p>Limit risk of bias ratings to the most important outcomes, with a
+focus on those most important for decision-making.</p></li>
+<li><p>Synthesize evidence narratively.</p></li>
+<li><p>Consider a meta-analysis only if appropriate (i.e., studies are
+similar enough to pool)</p></li>
+<li><p>Use a single reviewer to grade the certainty of evidence, with
+verification of all judgments by a second reviewer.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
