@@ -69,3 +69,7 @@ grViz(diagram = "digraph flowchart {
 * [Systematic Review](https://drmattg.github.io/Evidence_synthesis/posts/What_is_systematic_review/)
 
 * [Systematic Review & meta-analysis](https://drmattg.github.io/Evidence_synthesis/posts/What_is_meta_analysis/)
+
+## If you want more information and training:
+
+* [Where to get training and help](https://drmattg.github.io/Evidence_synthesis/posts/Where_to_get_training_and_help/) 
