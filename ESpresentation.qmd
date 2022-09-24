@@ -48,7 +48,7 @@ Greenspaces & human health benefits - multiple systematic reviews but no over-ar
 
 ## Meta-analysis
 
-![](Rplot.png)
+![](assets/Rplot.png)
 
 ## ***Systematic Map vs Systematic Review***
 
@@ -94,4 +94,10 @@ Frode at the library & I are working on a [website](https://drmattg.github.io/Ev
 
 [CEE](https://environmentalevidence.org/) have a dedicated training programme which is available for free [here](https://synthesistraining.github.io/) as well as [workshops](https://environmentalevidence.org/training-workshops/) that may have a cost associated with them.
 
-Other useful resources from CEE include a database of [previous evidence synthesis outputs](https://environmentalevidence.org/ceeder/), plain language summaries of [recent CEE Systematic Reviews and Maps](https://environmentalevidence.org/policy-briefs/), and [resources for those commissioning systematic reviews and maps](https://environmentalevidence.org/information-for-commissioners/).
+![](assets/frame.png)
+
+## 
+
+These [slides](https://drmattg.github.io/Evidence_synthesis/ESpresentation.html "link to slides") can be found on the [webpage](https://drmattg.github.io/Evidence_synthesis/ "Link to webpage")
+
+![](assets/qr-code%20(1).png)
