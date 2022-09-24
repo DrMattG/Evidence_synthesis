@@ -20,19 +20,19 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,9 +52,9 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   { color: #00769e; background-color: #f1f3f5; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span. { color: #00769e; } /* Normal */
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { color: #657422; } /* Attribute */
@@ -93,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-07-28"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-07-28"/>
+<meta property="article:published" itemprop="datePublished" content="2022-09-24"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-09-24"/>
 <meta name="article:author" content="Matt"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is 'Meta-analysis'?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["07-28-2022"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","output","date"]}},"value":[{"type":"character","attributes":{},"value":["What is 'Meta-analysis'?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["09-24-2022"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2072,6 +2072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2092,7 +2093,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What is 'Meta-analysis'?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-07-28T00:00:00.000+02:00","citationText":"Matt, 2022"}
+{"title":"What is 'Meta-analysis'?","authors":[{"author":"Matt","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-09-24T00:00:00.000+02:00","citationText":"Matt, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2106,6 +2107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="nav-right">
 <a href="../../index.html">Home</a>
 <a href="../../about.html">About</a>
+<a href="../../ESpresentation.html">Presentation</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2125,71 +2127,121 @@ document.addEventListener('DOMContentLoaded', function() {
   
   Matt
   
-<br/>07-28-2022
+<br/>09-24-2022
 </div>
 
 <div class="d-article">
-<p>Meta-analysis is the statistical combination of the results from studies that are included in a systematic review to reach a pooled conclusion about the effect of an intervention.The power to detect an effect in a meta-analysis is usually higher than the power in any of the studies that are included. This is a major benefit of using meta-analysis to determine the effect of interventions. We get a better (more robust) estimate because we can combine several smaller studies.</p>
-<p>In ecology, the size of the effects of interest are generally small and between-study heterogeneity generally high. We normally use a random-effects meta-analysis in ecology because we do not assume that the studies will estimate the same true effect, rather that they estimate a distribution of effects.</p>
-<p>There are many different R packages that can be used for Meta-analysis - the most well-known is metafor which contains functions for the statistical modelling needed. This <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">book</a> contains a lot of useful information and code to carry out a meta-analysis.</p>
-<h2 id="random-effects-meta-analysis-example">Random effects meta-analysis example</h2>
-<p>We can make use of a dataset that has already been compiled and used in this <a href="https://bookdown.org/robcrystalornelas/meta-analysis_of_ecological_data/">excellent book</a>. The data consist information from 62 Articles on 39 species of invasive trees.The included studies <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.3082">“…had to identify at least one invasive species and the invasive species had to be present within a natural ecosystem rather than agriculture or aquaculture systems (Population). All articles had to include replicate plots or study sites where invasive species were present (Intervention). The intervention could not be an assemblage of invasive species, but rather had to focus on the impacts of a single invasive species on native species richness…The study had to have a control group where the invasive species was either not present or present at very low densities (Control). We extracted measurements of species richness or higher-order taxonomic richness (Outcome).”</a></p>
+<p>Meta-analysis is the statistical combination of the results from
+studies that are included in a systematic review to reach a pooled
+conclusion about the effect of an intervention.The power to detect an
+effect in a meta-analysis is usually higher than the power in any of the
+studies that are included. This is a major benefit of using
+meta-analysis to determine the effect of interventions. We get a better
+(more robust) estimate because we can combine several smaller
+studies.</p>
+<p>In ecology, the size of the effects of interest are generally small
+and between-study heterogeneity generally high. We normally use a
+random-effects meta-analysis in ecology because we do not assume that
+the studies will estimate the same true effect, rather that they
+estimate a distribution of effects.</p>
+<p>There are many different R packages that can be used for
+Meta-analysis - the most well-known is metafor which contains functions
+for the statistical modelling needed. This <a
+href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">book</a>
+contains a lot of useful information and code to carry out a
+meta-analysis.</p>
+<h2 id="random-effects-meta-analysis-example">Random effects
+meta-analysis example</h2>
+<p>We can make use of a dataset that has already been compiled and used
+in this <a
+href="https://bookdown.org/robcrystalornelas/meta-analysis_of_ecological_data/">excellent
+book</a>. The data consist information from 62 Articles on 39 species of
+invasive trees.The included studies <a
+href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.3082">“…had
+to identify at least one invasive species and the invasive species had
+to be present within a natural ecosystem rather than agriculture or
+aquaculture systems (Population). All articles had to include replicate
+plots or study sites where invasive species were present (Intervention).
+The intervention could not be an assemblage of invasive species, but
+rather had to focus on the impacts of a single invasive species on
+native species richness…The study had to have a control group where the
+invasive species was either not present or present at very low densities
+(Control). We extracted measurements of species richness or higher-order
+taxonomic richness (Outcome).”</a></p>
 <h3 id="first-we-load-the-data">First we load the data</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://raw.githubusercontent.com/robcrystalornelas/meta-analysis_of_ecological_data/master/MaEDR_data.csv"</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://raw.githubusercontent.com/robcrystalornelas/meta-analysis_of_ecological_data/master/MaEDR_data.csv"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<h3 id="next-calculate-the-effect-size">Next calculate the effect size</h3>
-<p>An effect size is the (quite literately) the size of the effect of an intervention or exposure. For example, the (standardised) difference between the control and intervention in terms of native species richness. It can be expressed in a number of different ways. The most common ways in ecology include the standardised mean difference (Hedge’s g) and the Response Ratio. Hedge’s g is useful because it standardises the effects from each study so that they are measured on the same unit-less scale and adjusts for the sample size and variability in the control and intervention groups.</p>
-<p>The Response Ratio describes the ratio of the mean outcome from the control and the mean outcome from the intervention. It is often expressed as the Log Response Ratio. For the example data, a negative Log Response Ratio indicates that an invasive species is associated with a decrease in native species richness and a positive Log Response Ration indicates the opposite. Converting Log Response Ratios back to Response Ratios mean we can give a percentage change in richness with invasive species.</p>
-<p>Having a value of zero in either the control or intervention group means that the Response Ratio can not be calculated. There are some adjustments (which are not universally agreed upon) that can be made to the data - e.g. replacing 0 with 0.1.</p>
+<h3 id="next-calculate-the-effect-size">Next calculate the effect
+size</h3>
+<p>An effect size is the (quite literately) the size of the effect of an
+intervention or exposure. For example, the (standardised) difference
+between the control and intervention in terms of native species
+richness. It can be expressed in a number of different ways. The most
+common ways in ecology include the standardised mean difference (Hedge’s
+g) and the Response Ratio. Hedge’s g is useful because it standardises
+the effects from each study so that they are measured on the same
+unit-less scale and adjusts for the sample size and variability in the
+control and intervention groups.</p>
+<p>The Response Ratio describes the ratio of the mean outcome from the
+control and the mean outcome from the intervention. It is often
+expressed as the Log Response Ratio. For the example data, a negative
+Log Response Ratio indicates that an invasive species is associated with
+a decrease in native species richness and a positive Log Response Ration
+indicates the opposite. Converting Log Response Ratios back to Response
+Ratios mean we can give a percentage change in richness with invasive
+species.</p>
+<p>Having a value of zero in either the control or intervention group
+means that the Response Ratio can not be calculated. There are some
+adjustments (which are not universally agreed upon) that can be made to
+the data - e.g. replacing 0 with 0.1.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.metafor-project.org'>metafor</a></span><span class='op'>)</span>
-
-<span class='co'># Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</span>
-
-<span class='va'>RR_effect_sizes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://wviechtb.github.io/metafor/reference/escalc.html'>escalc</a></span><span class='op'>(</span> <span class='co'># Function for calculating effect sizes.</span>
-    <span class='st'>"ROM"</span>,
-    <span class='co'># Specify the effect size we want to calculate. In this case ROM for the Ratio of Means or Response Ratio</span>
-    m1i <span class='op'>=</span> <span class='va'>mean_invaded</span>,
-    <span class='co'># mean richness at invaded sites</span>
-    n1i <span class='op'>=</span> <span class='va'>sample_size_invaded</span>,
-    <span class='co'># invaded site sample size</span>
-    sd1i <span class='op'>=</span> <span class='va'>SD_invaded</span>,
-    <span class='co'># invaded site SD</span>
-    m2i <span class='op'>=</span> <span class='va'>mean_control</span>,
-    <span class='co'># mean richness at control sites</span>
-    n2i <span class='op'>=</span> <span class='va'>sample_size_control</span>,
-    <span class='co'># control site sample size</span>
-    sd2i <span class='op'>=</span> <span class='va'>SD_control</span>,
-    <span class='co'># control site SD</span>
-    data <span class='op'>=</span> <span class='va'>dat</span> <span class='co'># This is where the escalc function can find all the data for our meta-analysis</span>
-  <span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.metafor-project.org'>metafor</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</span></span>
+<span></span>
+<span><span class='va'>RR_effect_sizes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://wviechtb.github.io/metafor/reference/escalc.html'>escalc</a></span><span class='op'>(</span> <span class='co'># Function for calculating effect sizes.</span></span>
+<span>    <span class='st'>"ROM"</span>,</span>
+<span>    <span class='co'># Specify the effect size we want to calculate. In this case ROM for the Ratio of Means or Response Ratio</span></span>
+<span>    m1i <span class='op'>=</span> <span class='va'>mean_invaded</span>,</span>
+<span>    <span class='co'># mean richness at invaded sites</span></span>
+<span>    n1i <span class='op'>=</span> <span class='va'>sample_size_invaded</span>,</span>
+<span>    <span class='co'># invaded site sample size</span></span>
+<span>    sd1i <span class='op'>=</span> <span class='va'>SD_invaded</span>,</span>
+<span>    <span class='co'># invaded site SD</span></span>
+<span>    m2i <span class='op'>=</span> <span class='va'>mean_control</span>,</span>
+<span>    <span class='co'># mean richness at control sites</span></span>
+<span>    n2i <span class='op'>=</span> <span class='va'>sample_size_control</span>,</span>
+<span>    <span class='co'># control site sample size</span></span>
+<span>    sd2i <span class='op'>=</span> <span class='va'>SD_control</span>,</span>
+<span>    <span class='co'># control site SD</span></span>
+<span>    data <span class='op'>=</span> <span class='va'>dat</span> <span class='co'># This is where the escalc function can find all the data for our meta-analysis</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p>This appends two columns to the dataset. <em>yi</em> is the effect size from each row (Studies can have multiple effects reported - each effect gets its own row in the dataset). <em>vi</em> is the variance from each row</p>
+<p>This appends two columns to the dataset. <em>yi</em> is the effect
+size from each row (Studies can have multiple effects reported - each
+effect gets its own row in the dataset). <em>vi</em> is the variance
+from each row</p>
 <h3 id="run-the-meta-analysis">Run the meta-analysis</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</span>
-
-<span class='va'>random_effect_model_results</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://wviechtb.github.io/metafor/reference/rma.uni.html'>rma</a></span><span class='op'>(</span><span class='va'>yi</span>, <span class='co'># this is the effect size from each row in database</span>
-                                   <span class='va'>vi</span>, <span class='co'># measure of variance from each row in database</span>
-                                   method <span class='op'>=</span> <span class='st'>"REML"</span>, <span class='co'># random effect meta-analyses</span>
-                                   slab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>lastname</span>, <span class='va'>publication_year</span>, sep <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span>, <span class='co'># This line of code prepares study labels for the forest plot</span>
-                                   data <span class='op'>=</span> <span class='va'>RR_effect_sizes</span><span class='op'>)</span> 
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Code from https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</span></span>
+<span></span>
+<span><span class='va'>random_effect_model_results</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://wviechtb.github.io/metafor/reference/rma.uni.html'>rma</a></span><span class='op'>(</span><span class='va'>yi</span>, <span class='co'># this is the effect size from each row in database</span></span>
+<span>                                   <span class='va'>vi</span>, <span class='co'># measure of variance from each row in database</span></span>
+<span>                                   method <span class='op'>=</span> <span class='st'>"REML"</span>, <span class='co'># random effect meta-analyses</span></span>
+<span>                                   slab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>lastname</span>, <span class='va'>publication_year</span>, sep <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span>, <span class='co'># This line of code prepares study labels for the forest plot</span></span>
+<span>                                   data <span class='op'>=</span> <span class='va'>RR_effect_sizes</span><span class='op'>)</span> </span></code></pre>
 </div>
 </div>
 <p>Studies with missing data are removed from the analysis.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>random_effect_model_results</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>random_effect_model_results</span></span></code></pre>
 </div>
 <pre><code>
 Random-Effects Model (k = 84; tau^2 estimator: REML)
@@ -2210,48 +2262,76 @@ estimate      se     zval    pval    ci.lb    ci.ub     &lt;U+200B&gt;
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<p>The pooled effect estimate is -0.21 indicating that there is a negative effect of invasive trees on native species richness. The effect estimate does not cross 0 (the line of no effect) according to the 95% Confidence Intervals (-0.31 - -0.11).</p>
+<p>The pooled effect estimate is -0.21 indicating that there is a
+negative effect of invasive trees on native species richness. The effect
+estimate does not cross 0 (the line of no effect) according to the 95%
+Confidence Intervals (-0.31 - -0.11).</p>
 <h2 id="data-visualization">Data visualization</h2>
 <p>Typically meta-analysis shows the results as a forest plot.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://wviechtb.github.io/metafor/reference/forest.html'>forest</a></span><span class='op'>(</span>
-  <span class='va'>RR_effect_sizes</span><span class='op'>$</span><span class='va'>yi</span>, <span class='co'># These are effect sizes from each row in database</span>
-  <span class='va'>RR_effect_sizes</span><span class='op'>$</span><span class='va'>vi</span>, <span class='co'># These are variances from each row in database</span>
-  annotate <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='co'># Setting this to false prevents R from including CIs for each of the 84 effect sizes in the forest plot. Setting it to TRUE is generally a good practice, but would make this plot cluttered.</span>
-  slab <span class='op'>=</span> <span class='va'>random_effect_model_results</span><span class='op'>$</span><span class='va'>slab</span>, <span class='co'># Along the left hand side, we want each individual effect size labelled with author names and publication years. We specified this when we calculated the summary effect size above</span>
-  xlab <span class='op'>=</span> <span class='st'>"ln(Response Ratio)"</span>, <span class='co'># Label for x-axis</span>
-  cex <span class='op'>=</span> <span class='fl'>.8</span>, <span class='co'># Text side for study labels</span>
-  pch <span class='op'>=</span> <span class='fl'>15</span>, <span class='co'># shape of bars in forest plot</span>
-  cex.lab <span class='op'>=</span> <span class='fl'>1</span>, <span class='co'># Size of x-axis label</span>
-<span class='op'>)</span>
-
-<span class='co'># This is code adds in the summary effect size for your random effects meta-analysis</span>
-<span class='fu'><a href='https://wviechtb.github.io/metafor/reference/addpoly.html'>addpoly</a></span><span class='op'>(</span>
-  <span class='va'>random_effect_model_results</span>, <span class='co'># specify the model where your summary effect comes from.</span>
-  col <span class='op'>=</span> <span class='st'>"orange"</span>, <span class='co'># Pick a color that makes the summary effect stand out from the other effect sizes.</span>
-  cex <span class='op'>=</span> <span class='fl'>1</span>, <span class='co'># size for the text associates with summary effect</span>
-  annotate <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='co'># Usually, we set this to true. It makes sure effect size and CI for summary effect size is printed on forest plot.</span>
-  mlab <span class='op'>=</span> <span class='st'>"Summary"</span> <span class='co'># Label for summary effect size</span>
-<span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://wviechtb.github.io/metafor/reference/forest.html'>forest</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>RR_effect_sizes</span><span class='op'>$</span><span class='va'>yi</span>, <span class='co'># These are effect sizes from each row in database</span></span>
+<span>  <span class='va'>RR_effect_sizes</span><span class='op'>$</span><span class='va'>vi</span>, <span class='co'># These are variances from each row in database</span></span>
+<span>  annotate <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='co'># Setting this to false prevents R from including CIs for each of the 84 effect sizes in the forest plot. Setting it to TRUE is generally a good practice, but would make this plot cluttered.</span></span>
+<span>  slab <span class='op'>=</span> <span class='va'>random_effect_model_results</span><span class='op'>$</span><span class='va'>slab</span>, <span class='co'># Along the left hand side, we want each individual effect size labelled with author names and publication years. We specified this when we calculated the summary effect size above</span></span>
+<span>  xlab <span class='op'>=</span> <span class='st'>"ln(Response Ratio)"</span>, <span class='co'># Label for x-axis</span></span>
+<span>  cex <span class='op'>=</span> <span class='fl'>.8</span>, <span class='co'># Text side for study labels</span></span>
+<span>  pch <span class='op'>=</span> <span class='fl'>15</span>, <span class='co'># shape of bars in forest plot</span></span>
+<span>  cex.lab <span class='op'>=</span> <span class='fl'>1</span>, <span class='co'># Size of x-axis label</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># This is code adds in the summary effect size for your random effects meta-analysis</span></span>
+<span><span class='fu'><a href='https://wviechtb.github.io/metafor/reference/addpoly.html'>addpoly</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>random_effect_model_results</span>, <span class='co'># specify the model where your summary effect comes from.</span></span>
+<span>  col <span class='op'>=</span> <span class='st'>"orange"</span>, <span class='co'># Pick a color that makes the summary effect stand out from the other effect sizes.</span></span>
+<span>  cex <span class='op'>=</span> <span class='fl'>1</span>, <span class='co'># size for the text associates with summary effect</span></span>
+<span>  annotate <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='co'># Usually, we set this to true. It makes sure effect size and CI for summary effect size is printed on forest plot.</span></span>
+<span>  mlab <span class='op'>=</span> <span class='st'>"Summary"</span> <span class='co'># Label for summary effect size</span></span>
+<span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="What-is-metaanalysis_files/figure-html5/forest%20plot-1.png" width="624" /></p>
 </div>
-<p>The plot shows the estimated effect size for each study (the squares are scaled by sample size as larger samples get greater weight in the model) and the pooled effect size. We can see that the effect size of -0.21 does not cross the line of no effect (the dotted line at 0) and therefore can be confident that there is a small negative effect of invasive trees on native species richness.</p>
+<p>The plot shows the estimated effect size for each study (the squares
+are scaled by sample size as larger samples get greater weight in the
+model) and the pooled effect size. We can see that the effect size of
+-0.21 does not cross the line of no effect (the dotted line at 0) and
+therefore can be confident that there is a small negative effect of
+invasive trees on native species richness.</p>
 <h3 id="further-considerations">Further considerations</h3>
-<p>Publication bias (the tendency for studies with a certain direction to be published) is a major impediment to meta-analysis. We can reduce the potential for publication bias by using unpublished studies in our meta-analysis, but these may be hidden away “in file draws” and inaccessible. We can not detect publication bias in our meta-analysis but can infer that patterns appear consistent with publication bias. There are, of course, other explanations for these patterns (such as heterogeneity, location bias, differences in the intensity of an intervention, poor design of smaller studies, etc.)</p>
-<p>One of the main ways of doing this has been visually using funnel plots. Funnel plots are a scatterplot of the effect size estimates from each study against the study size or precision. Small studies should scatter across the bottom of the plot and as studies get larger the spread should be narrower.</p>
+<p>Publication bias (the tendency for studies with a certain direction
+to be published) is a major impediment to meta-analysis. We can reduce
+the potential for publication bias by using unpublished studies in our
+meta-analysis, but these may be hidden away “in file draws” and
+inaccessible. We can not detect publication bias in our meta-analysis
+but can infer that patterns appear consistent with publication bias.
+There are, of course, other explanations for these patterns (such as
+heterogeneity, location bias, differences in the intensity of an
+intervention, poor design of smaller studies, etc.)</p>
+<p>One of the main ways of doing this has been visually using funnel
+plots. Funnel plots are a scatterplot of the effect size estimates from
+each study against the study size or precision. Small studies should
+scatter across the bottom of the plot and as studies get larger the
+spread should be narrower.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://wviechtb.github.io/metafor/reference/funnel.html'>funnel</a></span><span class='op'>(</span><span class='va'>random_effect_model_results</span><span class='op'>)</span>
-</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://wviechtb.github.io/metafor/reference/funnel.html'>funnel</a></span><span class='op'>(</span><span class='va'>random_effect_model_results</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="What-is-metaanalysis_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
-<p>Each dot in the funnel plot is a study, larger studies (with higher power) are towards the top and smaller studies toward the bottom. A meta-analysis with no publication bias would have all points falling within the confidence limits (dotted lines) and roughly symmetrical either side of the “funnel”.</p>
-<p>There are many ways to assess publication bias (e.g. <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724" class="uri">https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724</a>). It is important to remember that although funnel plots are the most popular they may not be the best (especially in high heterogenity and small sample size situations) way.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Each dot in the funnel plot is a study, larger studies (with higher
+power) are towards the top and smaller studies toward the bottom. A
+meta-analysis with no publication bias would have all points falling
+within the confidence limits (dotted lines) and roughly symmetrical
+either side of the “funnel”.</p>
+<p>There are many ways to assess publication bias (e.g. <a
+href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724"
+class="uri">https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13724</a>).
+It is important to remember that although funnel plots are the most
+popular they may not be the best (especially in high heterogenity and
+small sample size situations) way.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

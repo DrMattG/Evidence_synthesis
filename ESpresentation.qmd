@@ -1,0 +1,97 @@
+---
+title: "Evidence Synthesis Methods"
+author: "Matt"
+format:
+  revealjs:
+    slide-number: true
+    show-slide-number: all
+editor: visual
+---
+
+## What is evidence synthesis?
+
+### 
+
+[...the process of bringing together information from a range of sources and disciplines to inform debates and decisions on specific issues. Decision-making and public debate are best served if policymakers have access to the **best current evidence** on an issue](https://royalsociety.org/topics-policy/projects/evidence-synthesis/#:~:text=%27Evidence%20synthesis%27%20refers%20to%20the,current%20evidence%20on%20an%20issue. "Royal Society Definition").
+
+## 1. What types of questions can you ask?
+
+::: panel-tabset
+### What is the state of the evidence?
+
+"What research evidence is there that humans are exposed to and affected by AMR in the environment?"
+
+### What is the effect of an intervention/exposure on a population?
+
+"How do changes in flow magnitude due to hydroelectric power production affect fish abundance and diversity in temperate regions?"
+
+### How can we generalise the best evidence to a larger population/spatial extent?
+
+Greenspaces & human health benefits - multiple systematic reviews but no over-arching understanding of the effects
+:::
+
+## Use question frameworks (e.g. PICO)
+
+***Subject (population)***---freshwater and estuarine fish in temperate regions.
+
+***Intervention/exposure***---changes to (or manipulations of) flow magnitude due to hydroelectric production.
+
+***Comparator***---no intervention or alternate levels of intervention.
+
+***Outcomes***---measures of changes in abundance (broadly defined in terms of abundance, density, biomass, yield, etc.) and diversity (broadly defined in terms of species richness, diversity, etc.)
+
+## Method overview
+
+*Systematic review/Meta-analysis - not just a review done systematically*
+
+![Systematic Review workflow](assets/SR_process.png)
+
+## Meta-analysis
+
+![](Rplot.png)
+
+## ***Systematic Map vs Systematic Review***
+
+*Systematic reviews aim at synthesising evidence and assessing the **strength of evidence***
+
+*Systematic maps are primarily concerned with structuring a research area ("what is the evidence base for...?") to identify **gaps and gluts of evidence***
+
+## Rapid review
+
+[No agreed definition of a rapid review]{.underline}
+
+Which corners to cut (not exhaustive)?
+
+-   Span of the literature (e.g. post 2010 - present)
+
+-   "Study quality" (e.g. only systematic reviews)
+
+-   Number of reviewers (e.g. 1 person to review & 1 to check a %)
+
+## 
+
+Which corners **NOT** to cut?
+
+-   ***Critical Appraisal - internal and external validity of the study***
+
+    -   Does the study fit your question?
+
+    -   Does the study answer the question it sets out to do?
+
+    -   Does it have clear separation between control & exposure/intervention
+
+### *Not all evidence is created equal!*
+
+## Where to get help?
+
+[Conservation Evidence](https://www.conservationevidence.com/) provides a database of interventions - this is a useful repository but is **NOT** ***Evidence Synthesis*** - it is a good starting point though.
+
+## In NINA
+
+Frode at the library & I are working on a [website](https://drmattg.github.io/Evidence_synthesis/) to help you decide which type of review to use.
+
+## Collaboration for Environmental Evidence
+
+[CEE](https://environmentalevidence.org/) have a dedicated training programme which is available for free [here](https://synthesistraining.github.io/) as well as [workshops](https://environmentalevidence.org/training-workshops/) that may have a cost associated with them.
+
+Other useful resources from CEE include a database of [previous evidence synthesis outputs](https://environmentalevidence.org/ceeder/), plain language summaries of [recent CEE Systematic Reviews and Maps](https://environmentalevidence.org/policy-briefs/), and [resources for those commissioning systematic reviews and maps](https://environmentalevidence.org/information-for-commissioners/).
